@@ -57,7 +57,7 @@ export function makePlayer(k: KaboomCtx, posX: number, posY: number) {
 
 		if (player.hp() === 0) {
 			k.destroy(player);
-			k.go("level-2");
+			k.go("level-1");
 			return;
 		}
 
@@ -193,7 +193,7 @@ export function setControls(k: KaboomCtx, player: PlayerGameObj) {
 export function makeInhalable(k: KaboomCtx, enemy: GameObj) {
 	// when enemy is in inhale zone then, the enemy can be inhaled
 	enemy.onCollide("inhaleZone", () => {
-		enemy.isInahalable = true;
+		enemy.isInhalable = true;
 	});
 
 	// when enemy is not in the inhale zone, then the enemy cannot be inhaled
